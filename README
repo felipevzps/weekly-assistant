@@ -10,4 +10,8 @@ managing recurring tasks manually is so boring... and it became time-consuming a
 this tool automates the entire process, so I can start each week with an organized and updated planning note, without manually copy-pasting or missing events.
 
 # usage
+
+conda env create -n weekly-assistant -f environment.yaml
+conda activate weekly-assistant
+
 python weekly_assistant/main.py
