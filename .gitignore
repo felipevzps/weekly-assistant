@@ -1,0 +1,7 @@
+__pycache__/
+
+# secret files
+*.json
+
+# weekly todo files
+*.md
