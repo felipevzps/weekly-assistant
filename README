@@ -1,0 +1,17 @@
+weekly-assistant
+
+just a simple automation tool to generate and update my weekly task notes using data from [Google Calendar](https://developers.google.com/workspace/calendar/api/guides/overview) and my past task logs.  
+It is designed to work alongside my [obsidian](https://github.com/epwalsh/obsidian.nvim) vault.
+
+what it does?
+* reads my upcoming Google Calendar events (next 7 days)
+* parses unfinished tasks and future notes from previous weekly notes
+* generates a new weekly note using my [weekly template](https://github.com/felipevzps/dotfiles/blob/main/obsidian/templates/this-week-template.md)
+
+why?
+
+managing recurring tasks manually is so boring... and it became time-consuming and error-prone.  
+this tool automates the entire process, so I can start each week with an organized and updated planning note, without manually copy-pasting or missing events.
+
+usage
+python weekly_assistant/main.py
