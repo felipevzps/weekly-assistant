@@ -59,3 +59,4 @@ def main(inbox_dir, pending_tasks_path, future_tasks_path):
                 f.write(f"{task}\n")
             f.write("\n")
     print(f"Processamento de nota semanal concluído: {input_path}")
+    return(Path(input_path))
