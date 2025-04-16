@@ -17,4 +17,5 @@ this tool automates the entire process, so I can start each week with an organiz
 ----------------
 $ conda env create -n weekly-assistant -f environment.yaml
 $ conda activate weekly-assistant
-$ python weekly_assistant/main.py
+$ python weekly_assistant/main.py --weekly    # to manage my weekly notes
+$ python weekly_assistant/main.py --daily     # for adding new events during the week
