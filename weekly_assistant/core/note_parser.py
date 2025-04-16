@@ -9,7 +9,7 @@ def main(inbox_dir, pending_tasks_path, future_tasks_path):
         raise FileNotFoundError("Nenhum arquivo semanal encontrado no diretório especificado.")
     
     input_path = weekly_files[0]
-    print(f"Arquivo semanal selecionado: {input_path}")
+    #print(f"Arquivo semanal selecionado: {input_path}")
     original_content = input_path.read_text(encoding="utf-8")
     block_pattern = r"(?=^### .+?$)(.*?)(?=^### |\Z)"
     task_pattern = r"^- \[ \] .+"
@@ -58,5 +58,5 @@ def main(inbox_dir, pending_tasks_path, future_tasks_path):
             for task in tasks:
                 f.write(f"{task}\n")
             f.write("\n")
-    print(f"Processamento de nota semanal concluído: {input_path}")
+    #print(f"Processamento de nota semanal concluído: {input_path}")
     return(Path(input_path))

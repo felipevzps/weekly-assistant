@@ -68,7 +68,7 @@ def save_weekly_note(content, weekly_notes_dir):
     weekly_notes_dir.mkdir(parents=True, exist_ok=True)
     full_path = weekly_notes_dir / final_filename
     full_path.write_text(content, encoding="utf-8")
-    print(f"Nota semanal criada em: {full_path}")
+    #print(f"Nota semanal criada em: {full_path}")
     return str(full_path)
 
 def main(weekly_notes_dir):

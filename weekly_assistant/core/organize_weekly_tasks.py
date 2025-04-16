@@ -61,4 +61,4 @@ def main(inbox_dir, pending_tasks_path, future_tasks_path, weekly_note_path):
     tarefas_futuras = parse_tarefas_futuras(Path(future_tasks_path))
     novo_md = inserir_tarefas_no_markdown(original_md, tarefas_pendentes, tarefas_futuras)
     weekly_note_path.write_text("\n".join(novo_md), encoding="utf-8")
-    print(f"Tarefas pendentes e futuras adicionadas a {weekly_note_path}")
+    #print(f"Tarefas pendentes e futuras adicionadas a {weekly_note_path}")

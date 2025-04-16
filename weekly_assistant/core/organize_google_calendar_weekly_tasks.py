@@ -38,4 +38,4 @@ def main(inbox_dir, google_calendar_path, weekly_note_path):
     google_calendar = parse_google_calendar(Path(google_calendar_path))
     novo_md = inserir_calendario_no_markdown(original_md, google_calendar)
     weekly_note_path.write_text("\n".join(novo_md), encoding="utf-8")
-    print(f"Atividades do Google Calendar adicionadas a {weekly_note_path}")
+    #print(f"Atividades do Google Calendar adicionadas a {weekly_note_path}")

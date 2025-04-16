@@ -85,7 +85,7 @@ def save_events_to_markdown(events_by_day, week_start_date, google_calendar_path
                 end_time = event['end'].strftime('%H:%M')
                 f.write(f"{event['summary']} | {start_time} - {end_time}\n")
             f.write("\n")
-    print(f"Eventos do Google Calendar salvos em {google_calendar_path}")
+    #print(f"Eventos do Google Calendar salvos em {google_calendar_path}")
 
 def main(google_calendar_path, token_path, credentials_path):
     service = authenticate_google_calendar(token_path, credentials_path)
