@@ -1,5 +1,6 @@
 __pycache__/
 run-weekly-assistant.sh
+cron.log
 
 # secret files
 *.json
