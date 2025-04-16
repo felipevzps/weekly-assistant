@@ -1,17 +1,20 @@
+1. About
+----------------
 just a simple automation tool to generate and update my weekly task notes using data from Google Calendar and past task logs from my obsidian vault.
 
-# what it does?
+2. What it does?
+----------------
 * reads my upcoming Google Calendar events (next 7 days)
 * parses unfinished tasks and future notes from previous weekly notes
 * generates a new weekly note using my weekly obsidian template
 
-# why?
+3. Why?
+----------------
 managing recurring tasks manually is so boring... and it became time-consuming and error-prone.  
 this tool automates the entire process, so I can start each week with an organized and updated planning note, without manually copy-pasting or missing events.
 
-# usage
-
-conda env create -n weekly-assistant -f environment.yaml
-conda activate weekly-assistant
-
-python weekly_assistant/main.py
+4. Usage
+----------------
+$ conda env create -n weekly-assistant -f environment.yaml
+$ conda activate weekly-assistant
+$ python weekly_assistant/main.py
