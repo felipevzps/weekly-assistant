@@ -59,8 +59,7 @@ def save_weekly_note(content, weekly_notes_dir):
         2: "second",
         3: "third",
         4: "fourth",
-        5: "fifth",
-        6: "sixth"
+        5: "last",
     }
     ordinal_week = ORDINALS.get(week_number, f"{week_number}th")
     final_filename = f"{ordinal_week}-week-{month_name}-{year}.md"
