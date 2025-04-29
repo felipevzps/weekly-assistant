@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
 import re
+import datetime
 from pathlib import Path
+
+today = datetime.date.today()
+current_year = today.year
+current_month = today.month
+current_day = today.day 
 
 def main(inbox_dir, pending_tasks_path, future_tasks_path):
     weekly_files = list(Path(inbox_dir).glob("*-week-*.md"))
@@ -31,7 +37,8 @@ def main(inbox_dir, pending_tasks_path, future_tasks_path):
         if date_match:
             day = int(date_match.group(1))
             month = int(date_match.group(2))
-            if month > 4 or (month == 4 and day > 20):
+            block_date = datetime.date(today.year, month, day)
+            if block_date > today:
                 is_future = True
         if is_future:
             task_lines = [line for line in body if re.match(task_pattern, line)]
