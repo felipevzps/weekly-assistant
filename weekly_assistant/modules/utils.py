@@ -14,8 +14,10 @@ def setup_paths():
         "calendar_path": os.path.join(base_dir, "calendar/google_calendar.md"),
         "token_path": os.path.join(base_dir, "config/token.json"),
         "credentials_path": os.path.join(base_dir, "config/credentials.json"),
-        "inbox_dir": os.path.join(base_dir, "inbox/"),
-        "archive_dir": os.path.join(base_dir, "archive/")
+        #"inbox_dir": os.path.join(base_dir, "inbox/"),                 # debug inbox dir 
+        "inbox_dir": "/home/felipevzps/obsidian/workspace/inbox/",      # my vault inbox 
+        #"archive_dir": os.path.join(base_dir, "archive/")              # debug archive dir 
+        "archive_dir": "/home/felipevzps/obsidian/workspace/archive/"   # my valt archive 
     }
     
     # create directories if they don't exist
