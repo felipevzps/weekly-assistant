@@ -92,15 +92,28 @@ def get_week_dates(today=None):
 
 
 def get_week_number(today=None):
-    """Calculate the week number within the month."""
+    """
+    Calculate the week number within the month (1-5).
+    
+    Logic:
+    - Days 1-7 = Week 1
+    - Days 8-14 = Week 2
+    - Days 15-21 = Week 3
+    - Days 16-28 = Week 4
+    - Days 29+ = Week 5 (if exists)
+
+    Returns maximum of 5 weeks, with week 5 only for months that have 29+ days.
+    """
     if today is None:
         today = datetime.today()
         
     day = today.day
-    first_day = datetime(today.year, today.month, 1)
-    first_weekday = first_day.weekday()
-    
-    return ((day + first_weekday - 1) // 7) + 1
+
+    # divide day by 7 and round up
+    week_number = ((day - 1) // 7) + 1
+
+    # obs: never return more than 5 
+    return min(week_number, 5)
 
 def get_month_name(today=None):
     """Get the current month name."""
@@ -109,15 +122,44 @@ def get_month_name(today=None):
         
     return today.strftime("%B")
 
+def is_last_week_of_month(today=None):
+    """
+    Check if the current week is the last week of the month.
+    
+    Returns True if there are no more days in the month that would
+    constitute a new week after the current week ends.
+    """
+    if today is None:
+        today = datetime.today()
+    
+    # get the last day of the month
+    last_day = calendar.monthrange(today.year, today.month)[1]
+    
+    # calculate what week the last day would be in
+    last_day_week = ((last_day - 1) // 7) + 1
+    current_week = get_week_number(today)
+    
+    return current_week == last_day_week
 
-def get_ordinal_week(week_number):
-    """Convert a week number to an ordinal string (first, second, etc.)."""
+def get_ordinal_week(week_number, today=None):
+    """
+    Convert a week number to an ordinal string (first, second, etc.).
+    Uses 'last' for the final week of the month regardless of number.
+    """
+    if today is None:
+        today = datetime.today()
+    
+    # check if this is the last week of the month
+    if is_last_week_of_month(today):
+        return "last"
+    
     ordinals = {
         1: "first",
-        2: "second",
+        2: "second", 
         3: "third",
         4: "fourth",
-        5: "last"
+        5: "fifth"
     }
     
     return ordinals.get(week_number, f"{week_number}th")
+
